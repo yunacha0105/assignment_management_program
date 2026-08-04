@@ -44,9 +44,17 @@ def process(num):
 def enroll_movies():
     print('----- 영화 등록 -----')
     t = input('제목: ')
+    while t == '':
+        t = input('제목 정보를 입력하세요: ')
     d = input('주연: ')
+    while d == '':
+        d = input('주연 정보를 입력하세요: ')
     g = input('장르: ')
+    while g == '':
+        g = input('장르 정보를 입력하세요: ')
     y = input('개봉연도: ')
+    while y == '':
+        y = input('개봉연도 정보를 입력하세요: ')
     movie = Movie(t, d, g, y)
     movie_list.append(movie)
     print('영화 등록 완료 !')
@@ -61,6 +69,8 @@ def select_movie_list():
 # 상세조회
 def select_movie_one():
     print('----- 영화 상세 정보 -----')
+    for idx, movie in enumerate(movie_list):
+        print(f'{idx+1}. {movie.title}')
     num = int(input('조회 하고 싶은 영화 번호: '))
     movie = movie_list[num-1]
     print(movie)
@@ -68,6 +78,8 @@ def select_movie_one():
 # 수정
 def modify_movie():
     print('----- 목록 수정 -----')
+    for idx, movie in enumerate(movie_list):
+        print(f'{idx+1}. {movie.title}')
     num = int(input('수정하고 싶은 영화 번호: '))
     movie = movie_list[num-1]
     print(movie)
@@ -83,6 +95,8 @@ def modify_movie():
 #삭제
 def remove_movie():
     print('----- 영화 삭제 -----')
+    for idx, movie in enumerate(movie_list):
+        print(f'{idx+1}. {movie.title}')
     num = int(input('삭제하고 싶은 영화 번호: '))
     del movie_list[num-1]
     print('삭제 완료 !')
