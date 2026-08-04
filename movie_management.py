@@ -73,7 +73,7 @@ def modify_movie():
     print(movie)
 
     t = input(f'제목 ({movie.title}): ') or movie.title
-    d = input(f'감독 ({movie.actor}): ') or movie.actor
+    d = input(f'주연 ({movie.actor}): ') or movie.actor
     g = input(f'장르 ({movie.genre}): ') or movie.genre
     y = input(f'개봉연도 ({movie.year}): ') or movie.year
 
